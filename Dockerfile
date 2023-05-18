@@ -3,6 +3,7 @@ MAINTAINER "S M Y ALTAMASH" "smy.altamash@gmail.com"
 WORKDIR /home/enc
 COPY . /home/enc
 RUN npm -v
+RUN npm i
 #RUN apt update \
     #&& apt install -y --force-yes zip python make g++ \
     #&& npm i \
