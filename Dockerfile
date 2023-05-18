@@ -4,7 +4,7 @@ WORKDIR /home/enc
 COPY . /home/enc
 RUN npm -v
 RUN apt update \
-    && apt install -y --force-yes zip python make g++ \
+    && apt install -y --force-yes python make g++ \
     && npm i \
     && apt remove --purge -y --force-yes python make g++ \
     && apt-get autoremove -y  \
