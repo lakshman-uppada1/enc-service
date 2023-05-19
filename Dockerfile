@@ -1,9 +1,11 @@
-FROM node:6.14.4
+FROM node:8.0.0
 MAINTAINER "S M Y ALTAMASH" "smy.altamash@gmail.com"
 WORKDIR /home/enc
 COPY . /home/enc
+RUN sed -i '/jessie/d' /etc/apt/sources.list
+RUN apt-get -o Acquire::Check-Valid-Until=false update
 RUN apt update \
-    && apt install -y zip python make g++ \
+    && apt install -y python make g++ \
     && npm i \
     && apt remove --purge -y python make g++ \
     && apt-get autoremove -y \
