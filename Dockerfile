@@ -3,6 +3,8 @@ MAINTAINER "S M Y ALTAMASH" "smy.altamash@gmail.com"
 WORKDIR /home/enc
 COPY . /home/enc
 RUN npm -v
+RUN sed -i '/jessie/d' /etc/apt/sources.list
+RUN apt-get -o Acquire::Check-Valid-Until=false update
 RUN apt update \
     && apt install -y --force-yes python make g++ \
     && npm i \
