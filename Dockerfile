@@ -6,7 +6,7 @@ RUN sed -i '/jessie/d' /etc/apt/sources.list
 RUN apt-get -o Acquire::Check-Valid-Until=false update
 RUN apt update
 #RUN apt install -y zip python make g++
-RUN apt install -y zip
+#RUN apt install -y zip
 RUN apt install -y python
 RUN apt install -y make g++
 RUN npm i
